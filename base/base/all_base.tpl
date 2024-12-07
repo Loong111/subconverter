@@ -30,7 +30,7 @@ bypass-system = true
 skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,localhost,*.local,e.crashlytics.com,captive.apple.com,::ffff:0:0:0:0/1,::ffff:128:0:0:0/1
 #DNS设置或根据自己网络情况进行相应设置
 bypass-tun = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12
-dns-server = 119.29.29.29,223.5.5.5
+dns-server = 8.8.8.8,8.8.4.4,1.1.1.1
 
 [Script]
 http-request https?:\/\/.*\.iqiyi\.com\/.*authcookie= script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js
@@ -132,9 +132,6 @@ ca-p12 = MIIKGQIBAzCCCeMGCSqGSIb3DQEHAaCCCdQEggnQMIIJzDCCBBcGCSqGSIb3DQEHBqCCBAg
 ca-passphrase = FA1A9849
 skip-server-cert-verify = false
 
-{% endif %}
-{% if request.target == "quan" %}
-
 [SERVER]
 
 [SOURCE]
@@ -160,11 +157,6 @@ skip-server-cert-verify = false
 
 [STATE]
 STATE,AUTO
-
-[MITM]
-
-{% endif %}
-{% if request.target == "quanx" %}
 
 [general]
 excluded_routes=192.168.0.0/16, 172.16.0.0/12, 100.64.0.0/10, 10.0.0.0/8
@@ -201,11 +193,6 @@ static=🐟 漏网之鱼, direct, img-url=https://raw.githubusercontent.com/Kool
 [filter_local]
 
 [rewrite_local]
-
-[mitm]
-
-{% endif %}
-{% if request.target == "mellow" %}
 
 [Endpoint]
 DIRECT, builtin, freedom, domainStrategy=UseIP
